@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}
+
+\title{An Integer Boundary Condition for Ratios of Strictly Positive Linear Inequalities}
+\author{\textbf{Your Full Name Goes Here} \\ Independent Researcher}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+While the subtraction of simultaneous algebraic equations preserves equality, the subtraction of linear inequalities does not generally preserve order. This paper identifies a specific boundary rule under which a modified property of order is strictly maintained. We prove that for any set of strictly positive integers satisfying given linear order conditions, a division ratio condition mathematically guarantees a distinct minimum bound for the difference of the primary terms.
+\end{abstract}
+
+\section{Introduction}
+In elementary algebra, it is a well-established principle that given two inequalities $x > y$ and $a > b$, one cannot safely perform the subtraction operation $x - a > y - b$. Because subtraction shifts positions by non-uniform magnitudes rather than scaling proportionally, the directional sign of the resulting statement is vulnerable to inversion based on the arbitrary magnitude of the subtracted terms. This paper establishes a strict boundary condition where a clear inequality property is preserved, provided the domain is bounded to the set of strictly positive integers ($\mathbb{Z}^+$).
+
+\section{The Core Theorem}
+\begin{theorem}
+Let $a, b, c, d \in \mathbb{Z}^+$ be strictly positive integers such that $a > b$ and $c > d$. If the ratio condition $\frac{a}{c} \ge \frac{b}{d}$ is satisfied, then the discrete difference $a - b$ is bounded below by the opposing ratio:
+\begin{equation}
+a - b \ge \frac{b}{d}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+We begin with the primary ratio constraint:
+\begin{equation}
+\frac{a}{c} \ge \frac{b}{d}
+\end{equation}
+Because all variables are strictly positive integers, we cross-multiply across the inequality without altering its direction, yielding:
+\begin{equation}
+a \cdot d \ge b \cdot c
+\end{equation}
+We are also given that $c > d$. Since $c$ and $d$ are integers, this strict inequality implies:
+\begin{equation}
+c \ge d + 1
+\end{equation}
+Multiplying both sides of this inequality by the positive integer $b$ gives $b \cdot c \ge b(d + 1)$. Substituting this lower bound into our cross-multiplication result allows us to chain the inequalities using the \texttt{align*} environment:
+\begin{align*}
+a \cdot d &\ge b(d + 1) \\
+a \cdot d &\ge b \cdot d + b
+\end{align*}
+To isolate the original fractional relationship, we divide all terms by the positive integer $d$:
+\begin{equation}
+a \ge b + \frac{b}{d}
+\end{equation}
+Subtracting $b$ from both sides yields our final desired lower bound:
+\begin{equation}
+a - b \ge \frac{b}{d}
+\end{equation}
+This completes the proof.
+\end{proof}
+
+\section{Conclusion}
+By restricting the domain to positive integers, we demonstrate that while direct inequality subtraction remains chaotic, the cross-ratio condition acts as a strict mathematical filter. This ratio effectively constrains the value of $\frac{b}{d}$ to stay beneath or equal to the discrete integer difference $a - b$, offering a predictable boundary shortcut in discrete number theory.
+
+\end{document}
